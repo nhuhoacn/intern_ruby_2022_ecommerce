@@ -1,0 +1,5 @@
+review:
+  rating_min: 1
+  rating_max: 5
+message:
+  message_max: 100
