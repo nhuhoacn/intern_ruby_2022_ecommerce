@@ -13,21 +13,26 @@ end
 
 men = Category.create!(name: "Men")
 woman = Category.create!(name: "Woman")
-puts("create category")
 3.times do
   name = Faker::Emotion.noun
-  men.categories.new(name: name).save!
-
+  cate1 = men.categories.new(name: name)
+  cate1.save!
   name = Faker::Emotion.noun
-  cate2 = woman.categories.new(name: name).save!
+  cate1.categories.create!(name: name)
+
+  name = Faker::Movie.title
+  cate2 = woman.categories.new(name: name)
+  cate2.save!
+  name = Faker::Movie.title
+  cate2.categories.create!(name: name)
 end
 
 categories = Category.all
-quantity_in_stock = 50
 categories.each do |category|
   5.times do
     name = Faker::Nation.language
-    product = category.products.create!(name: name, price: 50, quantity_in_stock: quantity_in_stock)
+    des = Faker::Lorem.sentence(word_count: 5)
+    product = category.products.create!(name: name, price: 50, quantity_in_stock: 5, description: des)
     product_image = product.product_images.create!
     product_image.image.attach(io: File.open("app/assets/images/ProductImage/product#{rand(1..5)}.jpg"), filename: "product#{rand(1..35)}.jpg")
   end
@@ -40,15 +45,31 @@ users = User.all
   users.each { |user| user.orders.create!(status: status)}
 end
 
+users.each do |user|
+  5.times do
+    product_id = rand(1..30)
+    comment = Faker::Lorem.sentence(word_count: 5)
+    star = rand(1..5)
+    user.ratings.create!(comment: comment, star: star, product_id: product_id)
+  end
+end
+
+first = User.first
+first.orders.create!(status: 2)
+
 orders = Order.all
 orders.each do |order|
   rand(1..5).times do
     product_id = rand(1..40)
-    order.order_details.create!(product_id: product_id)
+    quantity = rand(1..3)
+    od = order.order_details.new(product_id: product_id, quantity: quantity)
+    od.save!
+    price = od.product.price
+    od.update(price: price)
   end
-10.times do |n|
-  Image.create!(
-    image: "/assets/",
-    product_id: Faker::Number.between(from: 8, to: 18),
-  )
+  amount = 0
+  order.order_details.each do |od|
+    amount += od.price * od.quantity
+  end
+  order.update(amount: amount)
 end

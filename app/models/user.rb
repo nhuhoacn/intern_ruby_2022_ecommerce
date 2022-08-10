@@ -20,6 +20,8 @@ class User < ApplicationRecord
   validates :password, presence: true,
     length: {minimum: Settings.user.pass_min}, allow_nil: true
 
+  scope :newest, ->{order created_at: :desc}
+
   has_secure_password
   before_save :downcase_email
 

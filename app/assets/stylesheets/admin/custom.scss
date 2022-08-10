@@ -23,6 +23,10 @@
   padding: 20px 0px;
 }
 
+.align_column{
+  text-align: center;
+}
+
  /* End of minh's custom */
 
 .row {
@@ -32,6 +36,53 @@
 .column {
   flex: 50%;
   padding: 10px;
+}
+/*End of Minh's custom*/
+.first-third {
+    width: 60%;
+
+    float: left;
+}
+
+.second-third {
+    width: 20%;
+
+    float: left;
+}
+
+.third-third {
+    width: 20%;
+
+    float: left;
+}
+
+@media only screen and (max-width: 960px) {
+
+    .first-third {
+        width: 100%;
+        padding-bottom: 10px;
+        float: none;
+    }
+
+    .second-third {
+        width: 100%;
+        padding-bottom: 10px;
+        float: none;
+    }
+
+    .third-third {
+        width: 100%;
+        padding-bottom: 10px;
+        float: none;
+    }
+
+}
+
+/* Clear floats after the columns */
+.wrapper:after {
+  content: "";
+  display: block;
+  clear: both;
 }
 /*End of Minh's custom*/
 
@@ -100,10 +151,11 @@
     scroll-behavior: smooth;
   }
 }
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&display=swap');
 
 body {
   margin: 0;
-  font-family: var(--bs-body-font-family);
+  font-family: 'Open Sans', sans-serif;
   font-size: var(--bs-body-font-size);
   font-weight: var(--bs-body-font-weight);
   line-height: var(--bs-body-line-height);
