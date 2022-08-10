@@ -7,7 +7,7 @@
 
   <p>
     <strong><%= t "admin.category.parent" %></strong>
-    <%= @parent %>
+    <%= find_parent(@category) %>
   </p>
 
   <%= link_to t("admin.category.edit"), edit_admin_category_path(@category) %> |

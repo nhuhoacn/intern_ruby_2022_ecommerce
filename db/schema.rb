@@ -10,25 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_08_10_081931) do
+ActiveRecord::Schema.define(version: 2022_08_12_070703) do
 
-  create_table "categories", charset: "utf8mb3", force: :cascade do |t|
+  create_table "categories", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name"
-    t.integer "parent_id"
     t.string "parent_path"
+    t.bigint "category_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["category_id"], name: "index_categories_on_category_id"
   end
 
-  create_table "images", charset: "utf8mb3", force: :cascade do |t|
-    t.string "image"
-    t.bigint "product_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["product_id"], name: "index_images_on_product_id"
-  end
-
-  create_table "messages", charset: "utf8mb3", force: :cascade do |t|
+  create_table "messages", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "message"
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
@@ -36,7 +29,7 @@ ActiveRecord::Schema.define(version: 2022_08_10_081931) do
     t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
-  create_table "order_details", charset: "utf8mb3", force: :cascade do |t|
+  create_table "order_details", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.integer "quantity"
     t.float "price"
     t.bigint "order_id", null: false
@@ -47,27 +40,27 @@ ActiveRecord::Schema.define(version: 2022_08_10_081931) do
     t.index ["product_id"], name: "index_order_details_on_product_id"
   end
 
-  create_table "orders", charset: "utf8mb3", force: :cascade do |t|
+  create_table "orders", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.float "amount"
-    t.string "status"
+    t.integer "status"
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
-  create_table "products", charset: "utf8mb3", force: :cascade do |t|
+  create_table "products", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name"
     t.float "price"
     t.string "description"
     t.integer "quantity_in_stock"
-    t.bigint "category_id", null: false
+    t.bigint "category_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["category_id"], name: "index_products_on_category_id"
   end
 
-  create_table "ratings", charset: "utf8mb3", force: :cascade do |t|
+  create_table "ratings", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "comment"
     t.integer "star"
     t.bigint "user_id", null: false
@@ -78,7 +71,7 @@ ActiveRecord::Schema.define(version: 2022_08_10_081931) do
     t.index ["user_id"], name: "index_ratings_on_user_id"
   end
 
-  create_table "users", charset: "utf8mb3", force: :cascade do |t|
+  create_table "users", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name"
     t.string "email"
     t.string "phone"
@@ -89,7 +82,7 @@ ActiveRecord::Schema.define(version: 2022_08_10_081931) do
     t.string "password_digest"
   end
 
-  add_foreign_key "images", "products"
+  add_foreign_key "categories", "categories"
   add_foreign_key "messages", "users"
   add_foreign_key "order_details", "orders"
   add_foreign_key "order_details", "products"

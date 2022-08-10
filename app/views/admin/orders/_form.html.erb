@@ -1,0 +1,48 @@
+<div class = "container">
+  <h1><%= t "admin.order.details" %><%= @order.id%></h1>
+
+  <%= form_for [:admin, @order] do |form| %>
+  <div class="field">
+    <h3>
+    <%= form.label t("admin.order.current_status") %>
+    <%= @order.status %>
+    </h3>
+  </div>
+
+  <div class="control-group">
+    <%= form.label t("admin.order.update_status"), class: "control-label" %>
+    <%= form.select(:status, Order.statuses.keys) %>
+  </div>
+
+  <table class = "table">
+    <thead>
+      <tr>
+        <th><%= t "admin.order.quantity" %></th>
+        <th><%= t "admin.order.price" %></th>
+        <th><%= t "admin.order.name" %></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @order_details.includes([:product]).each do |order_detail| %>
+        <tr>
+          <td><%= order_detail.quantity %></td>
+          <td><%= order_detail.price %></td>
+          <td><%= order_detail.name %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <div class="field">
+    <%= form.label t("admin.order.total") %>
+    <%= @order.amount %>
+  </div>
+
+  <div class="actions">
+    <div style = "submit_padding"><%= form.submit %></div>
+  </div>
+
+  <%= link_to t("admin.category.back"), admin_orders_path %>
+  <% end %>
+</div>

@@ -1,14 +1,13 @@
 class Admin::CategoriesController < Admin::BaseController
   before_action :find_category, only: %i(edit show update destroy)
+  before_action :get_all_categories, only: %i(edit new)
 
   def index
-    @pagy, @categories = pagy(Category.all.newest, item: Settings.category.item)
+    @pagy, @categories = pagy(Category.newest,
+                              items: Settings.category.item)
   end
 
-  def show
-    @parent = Category.find_by id: @category.parent_id
-    @parent = @parent.nil? ? t("admin.category.none") : @parent.name
-  end
+  def show; end
 
   def new
     @category = Category.new
@@ -56,6 +55,10 @@ class Admin::CategoriesController < Admin::BaseController
   end
 
   def category_params
-    params.require(:category).permit(:name, :parent_id, :parent_path)
+    params.require(:category).permit(:name, :category_id, :parent_path)
+  end
+
+  def get_all_categories
+    @categories = Category.all
   end
 end

@@ -67,6 +67,23 @@ en:
       none: "None"
       details: "Details"
       content: "Content"
+    order:
+      orders: "Orders"
+      amount: "Total"
+      status: "Status"
+      order_id: "Order id: "
+      editing: "Editing order"
+      quantity: "Quantity"
+      price: "Price"
+      name: "Product list"
+      id: "ID"
+      details: "Order's details: "
+      total: "Total: "
+      current_status: "Current status: "
+      update_status: "Update status: "
+      customer: "Customer"
+      date: "Date"
+      action: "Action"
   layouts:
     header:
       sign_up: "Sign Up"

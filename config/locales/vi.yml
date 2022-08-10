@@ -67,6 +67,23 @@ vi:
       none: "Không có"
       details: "Chi tiết"
       content: "Nội dung"
+    order:
+      orders: "Danh sách order"
+      amount: "Tổng tiền"
+      status: "Trạng thái"
+      order_id: "Mã đơn hàng: "
+      editing: "Chỉnh sửa"
+      quantity: "Số lượng"
+      price: "Giá"
+      name: "Danh sách sản phẩm"
+      id: "ID"
+      details: "Chi tiết đơn hàng: "
+      total: "Tổng tiền: "
+      current_status: "Trạng thái hiện tại: "
+      update_status: "Cập nhật trạng thái: "
+      customer: "Khách hàng"
+      date: "Ngày mua"
+      action: "Xử lý"
   layouts:
     header:
       sign_up: "Đăng ký"
