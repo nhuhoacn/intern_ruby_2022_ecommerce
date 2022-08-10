@@ -1,0 +1,60 @@
+<div class="container">
+  <div class="row">
+    <div class="column">
+      <div class="form-outline mb-4">
+        <h2>
+          <%= t "admin.product.ID" %>
+            <%= @product.id %>
+        </h2>
+      </div>
+
+      <div class="form-outline mb-4">
+        <strong>
+          <%= t "admin.category.name" %>
+        </strong>
+        <%= @product.name %>
+      </div>
+
+      <div class="form-outline mb-4">
+        <strong>
+          <%= t "admin.product.price" %>
+        </strong>
+        <%= @product.price %>
+      </div>
+
+      <div class="form-outline mb-4">
+        <strong>
+          <%= t "admin.category.parent" %>
+        </strong>
+        <%= category_name(@product.category_id) %>
+      </div>
+
+      <div class="form-outline mb-4">
+        <strong>
+          <%= t "admin.product.description" %>
+        </strong>
+        <%= @product.description %>
+      </div>
+
+      <div class="form-outline mb-4">
+        <%= link_to t("admin.product.edit"), edit_admin_product_path(@product) %>
+        <%= link_to t("admin.product.back"), admin_products_path %>
+      </div>
+    </div>
+
+    <div class="column">
+      <div class="form-outline mb-4">
+        <strong>
+          <%= t "admin.product.images" %>
+        </strong>
+        <% if @product.product_images.any? %>
+          <% @product.product_images.includes(image_attachment: :blob).each do |proimg| %>
+            <div>
+              <%= image_tag(proimg.thumbnail(proimg.image)) if proimg.image.present? %>
+            </div>
+          <% end %>
+        <% end%>
+      </div>
+    </div>
+  </div>
+</div>

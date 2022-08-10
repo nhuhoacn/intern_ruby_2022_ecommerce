@@ -5,6 +5,7 @@ import "channels"
 require("jquery")
 import "bootstrap"
 import "../stylesheets/application"
+import "cocoon";
 
 Rails.start()
 require('admin/scripts')

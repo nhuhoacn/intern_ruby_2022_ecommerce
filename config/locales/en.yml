@@ -87,6 +87,25 @@ en:
       customer: "Customer"
       date: "Date"
       action: "Action"
+    product:
+      products: "Products"
+      category: "Category"
+      ID: "ID"
+      price: "Price: "
+      description: "Description: "
+      images: "Images"
+      you_sure: "Are you sure?"
+      new: "Add product"
+      edit: "Edit"
+      back: "Back"
+      show: "Show"
+      new_product: "Add product"
+      add_image: "Add product image"
+      remove_image: "Remove image"
+      filter:
+        select: "Select filter"
+        newest: "Newest"
+        uncate: "Uncategorized"
   layouts:
     application:
       english: "English"
@@ -117,6 +136,7 @@ en:
       email: "Email"
       password: "Password"
       log_in: "Log in"
+      content_sign_up: "By clicking register, I agree to your terms"
   carts:
     create:
       success_add_cart: "Add to cart successfully"

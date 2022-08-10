@@ -1,6 +1,6 @@
 class Admin::CategoriesController < Admin::BaseController
   before_action :find_category, only: %i(edit show update destroy)
-  before_action :get_all_categories, only: %i(edit new)
+  before_action :load_categories, only: %i(edit new)
 
   def index
     @pagy, @categories = pagy(Category.newest,
@@ -58,7 +58,7 @@ class Admin::CategoriesController < Admin::BaseController
     params.require(:category).permit(:name, :category_id, :parent_path)
   end
 
-  def get_all_categories
+  def load_categories
     @categories = Category.all
   end
 end
