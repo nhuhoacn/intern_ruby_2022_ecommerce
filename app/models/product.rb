@@ -7,6 +7,8 @@ class Product < ApplicationRecord
 
   accepts_nested_attributes_for :product_images, allow_destroy: true
 
+  delegate :name, to: :category, prefix: true
+
   validates :name, :price, :quantity_in_stock, presence: true
 
   scope :by_name, (lambda do |name|

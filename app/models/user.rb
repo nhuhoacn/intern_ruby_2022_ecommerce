@@ -22,6 +22,13 @@ class User < ApplicationRecord
 
   scope :newest, ->{order created_at: :desc}
 
+  scope :best_user, ->(best){where id: best}
+
+  scope :this_month, (lambda do
+    where(created_at:
+      DateTime.now.beginning_of_month..DateTime.now.end_of_month)
+  end)
+
   has_secure_password
   before_save :downcase_email
 

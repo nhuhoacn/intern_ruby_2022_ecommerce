@@ -2,8 +2,9 @@ class Admin::OrdersController < Admin::BaseController
   before_action :find_order, only: %i(edit update)
 
   def index
-    @pagy, @orders = pagy(Order.oldest,
-                          items: Settings.order.item)
+    @orders = Order.oldest
+    @pagy = pagy(@orders,
+                 items: Settings.order.item).first
   end
 
   def edit

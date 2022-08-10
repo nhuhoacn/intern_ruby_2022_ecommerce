@@ -3,14 +3,7 @@ class Admin::UsersController < Admin::BaseController
 
   def index
     @pagy, @users = pagy(User.newest, items: Settings.user.item)
-    biggest = 0
-    @users.each do |user|
-      count = user.orders.this_month.count
-      if count > biggest
-        biggest = count
-        @best = user
-      end
-    end
+    @best = User.best_user(Order.most_order).first
   end
 
   def show

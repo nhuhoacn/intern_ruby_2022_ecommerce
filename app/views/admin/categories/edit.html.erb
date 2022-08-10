@@ -1,7 +1,7 @@
 <div class = "container" >
   <h1><%= t "admin.category.editing" %></h1>
 
-  <%= render 'form', category: @category, categories: @categories %>
+  <%= render "form", category: @category %>
 
   <%= link_to t("admin.category.show"), admin_category_path(@category) %>
   <%= link_to t("admin.category.back"), admin_categories_path %>
