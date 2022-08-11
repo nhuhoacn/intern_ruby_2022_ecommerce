@@ -7,3 +7,10 @@ category:
   item: 15
 order:
   item: 15
+user:
+  email_length: !ruby/range 6..255
+  name_min: 3
+  phone_length: !ruby/range 9..11
+  adress_min: 6
+  pass_min: 6
+  valid_email_regex: !ruby/regexp /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
