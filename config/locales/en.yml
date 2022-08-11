@@ -1,5 +1,5 @@
 en:
-  static_pages: 
+  static_pages:
     home: "Home"
     sign_in: "Sign in"
     sign_up: "Sign up"
@@ -16,3 +16,21 @@ en:
     password: "Password"
     confirmation: "Confirmation Password"
     dont_have_acount: "Don't have an account?"
+  admin:
+    static_pages:
+      settings: "Settings"
+      log_out: "Log out"
+      dashboard: "Dash board"
+      main: "Main statistic"
+      manage: "Manage"
+      tables: "Tables"
+      communicate: "Communicate"
+      statistic: "Statistic"
+      charts: "Charts"
+      category: "Category"
+      logged_in_as: "Logged in as:"
+      name: "Ecommerce"
+      view_details: "View details"
+      product: "Product"
+      order: "Order"
+      account: "Account"

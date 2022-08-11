@@ -7,5 +7,10 @@ Rails.application.routes.draw do
     get "/mens", to: "static_pages#mens"
     get "/womens", to: "static_pages#womens"
     resources :user
+
+    namespace :admin do
+      resources :static_pages
+      root "static_pages#index"
+    end
   end
 end
