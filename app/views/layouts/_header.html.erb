@@ -258,23 +258,9 @@
           <h3 class="agileinfo_sign">
             <%= t "static_pages.sign_in" %>
           </h3>
-          <!-- <form action="#" method="post">
-            <div class="styled-input agile-styled-input-top">
-              <input type="text" name="Name" required="" />
-              <label><%= t "static_pages.name" %></label>
-              <span></span>
-            </div>
-            <div class="styled-input">
-              <input type="email" name="Email" required="" />
-              <label><%= t "static_pages.email" %></label>
-              <span></span>
-            </div>
-            <input type="submit" value="Sign In" /> -->
-          </form>
-          <%= render "layouts/form_login" %>
+          <%= render "users/form_login" %>
           <ul
-            class="social-nav model-3d-0 footer-social w3_agile_social top_agile_third"
-          >
+            class="social-nav model-3d-0 footer-social w3_agile_social top_agile_third">
             <li>
               <a href="#" class="facebook">
                 <div class="front">
@@ -341,33 +327,10 @@
       </div>
       <div class="modal-body modal-body-sub_agile">
         <div class="col-md-8 modal_body_left modal_body_left1">
-          <h3 class="agileinfo_sign">Sign Up <span>Now</span></h3>
-          <form action="#" method="post">
-            <div class="styled-input agile-styled-input-top">
-              <input type="text" name="Name" required="" />
-              <label>Name</label>
-              <span></span>
-            </div>
-            <div class="styled-input">
-              <input type="email" name="Email" required="" />
-              <label>Email</label>
-              <span></span>
-            </div>
-            <div class="styled-input">
-              <input type="password" name="password" required="" />
-              <label>Password</label>
-              <span></span>
-            </div>
-            <div class="styled-input">
-              <input type="password" name="Confirm Password" required="" />
-              <label>Confirm Password</label>
-              <span></span>
-            </div>
-            <input type="submit" value="Sign Up" />
-          </form>
+          <h3 class="agileinfo_sign"> <%= t ".sign_up" %><span><%= t ".now" %></span></h3>
+            <%= render "users/form_signup", user: User.new %>
           <ul
-            class="social-nav model-3d-0 footer-social w3_agile_social top_agile_third"
-          >
+            class="social-nav model-3d-0 footer-social w3_agile_social top_agile_third">
             <li>
               <a href="#" class="facebook">
                 <div class="front">
@@ -406,7 +369,7 @@
             </li>
           </ul>
           <div class="clearfix"></div>
-          <p><a href="#">By clicking register, I agree to your terms</a></p>
+          <p><%= t ".content_sign_up" %></p>
         </div>
         <div class="col-md-4 modal_body_right modal_body_right1">
           <%= image_tag "/assets/log_pic.jpg" %>
