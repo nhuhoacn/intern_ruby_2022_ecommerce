@@ -24,6 +24,16 @@ vi:
     password: "Mật khẩu"
     confirmation: "Xác nhận lại mật khẩu"
     dont_have_acount: "Bạn chưa có tài khoản ?"
+    quick_view: "Xem nhanh"
+    trousers: "Quần"
+    shirt: "Áo"
+    shoes: "Giầy"
+    sandal: "Dép"
+    balo: "Cặp"
+    product_not_found: "Không tìm thấý sản phẩm"
+    category_not_found: "Không tìm thấy danh mục"
+    enter_form: "Nhập từ cần tìm ..."
+    search_result: "Kết quả tìm kiếm từ : "
   admin:
     static_pages:
       settings: "Cài đặt"
