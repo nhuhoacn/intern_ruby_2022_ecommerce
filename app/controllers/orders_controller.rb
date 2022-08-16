@@ -3,6 +3,10 @@ class OrdersController < ApplicationController
   before_action :current_cart, :load_product_in_cart
   before_action :check_product_quantity, only: %i(new create)
 
+  def index
+    @pagy, @orders = pagy current_user.orders
+  end
+
   def new
     @order = current_user.orders.build
     @product = Product.find_by id: params[:id]
@@ -16,6 +20,26 @@ class OrdersController < ApplicationController
       flash.now[:danger] = t ".order_fail"
       render :new
     end
+  end
+
+  def destroy
+    @order = Order.find params[:id]
+    if @order.destroy
+      flash[:success] = t "static_pages.delete_success"
+      redirect_to action: :index
+    else
+      flash[:danger] = t "static_pages.delete_fail"
+    end
+  end
+
+  def change
+    @order = Order.find_by(id: params[:id]).Canceled!
+    if @order
+      flash[:success] = t "static_pages.change_success"
+    else
+      flash[:danger] = t "static_pages.change_fail"
+    end
+    redirect_to request.referer
   end
 
   private

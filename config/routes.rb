@@ -21,6 +21,7 @@ Rails.application.routes.draw do
       root "static_pages#index"
     end
     resources :ratings
+    resources :order_details
     resources :categories, only: :show
     resources :products do
       collection do

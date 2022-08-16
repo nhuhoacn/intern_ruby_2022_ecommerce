@@ -1,0 +1,26 @@
+<% if @ods.present? %>
+<div class="container">
+  <h2><%= t "static_pages.order_details_msg" %> <%= params[:id] %></h2>
+  <br>
+  <table class="table table-bordered">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col"><%= t "static_pages.name" %></th>
+        <th scope="col"><%= t "static_pages.price" %></th>
+        <th scope="col"><%= t "static_pages.quantity" %></th>
+      </tr>
+    </thead>
+      <%= render partial: "detail_order" %>
+    <tbody>
+      <tr>
+        <th scope="row"><%= t "static_pages.total" %></th>
+        <th><%= number_to_currency @order_total.amount, negative_format: "(%u%n)" %></td>
+      </tr>
+    <tbody>
+  </table>
+</div>
+<% else %>
+  <div class="mb-6">
+    <h2><%= t "static_pages.order_not_found" %></h2>
+  </div>
+<% end %>

@@ -7,9 +7,11 @@
     }
   }
 }
+
 .content-form{
   margin-bottom: 10px;
 }
+
 .wrap-comment {
   span.user {
     font-size: 18px;
@@ -21,6 +23,11 @@
     border-radius: 50%;
   }
 }
+
 .show_rating{
   color: yellow;
+}
+
+.alert_none{
+  display: none;
 }
