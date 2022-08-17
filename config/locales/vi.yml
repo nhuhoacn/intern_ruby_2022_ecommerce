@@ -24,6 +24,16 @@ vi:
     password: "Mật khẩu"
     confirmation: "Xác nhận lại mật khẩu"
     dont_have_acount: "Bạn chưa có tài khoản ?"
+    quick_view: "Xem nhanh"
+    trousers: "Quần"
+    shirt: "Áo"
+    shoes: "Giầy"
+    sandal: "Dép"
+    balo: "Cặp"
+    product_not_found: "Không tìm thấý sản phẩm"
+    category_not_found: "Không tìm thấy danh mục"
+    enter_form: "Nhập từ cần tìm ..."
+    search_result: "Kết quả tìm kiếm từ : "
   admin:
     static_pages:
       settings: "Cài đặt"
@@ -62,6 +72,9 @@ vi:
       sign_up: "Đăng ký"
       now: "ngay bây giờ"
       content_sign_up: "Khi đăng ký, tôi đồng ý với các điều khoản"
+      account: "Tài khoản"
+      log_out: "Đăng xuất"
+      search_here: "Tìm kiếm ở đây"
   users:
     create:
       users_success: "Đăng ký thành công"
@@ -74,4 +87,9 @@ vi:
       address: "Địa chỉ"
       password: "Mật khẩu"
       confirm_password: "Nhập lại mật khẩu"
+  sessions:
     new:
+      new_user: "Người dùng mới? Đăng ký ngay!"
+      email: "Email"
+      password: "Mật khẩu"
+      log_in: "Đăng nhập"

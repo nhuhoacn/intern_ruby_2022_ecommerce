@@ -1,30 +1,23 @@
 <div id = "form_signup">
   <%= simple_form_for user, remote: true do |f| %>
-
-    <%= f.label t ".name", hint: "No special characters." %>
+    <%= f.label t ".name" %>
     <%= f.error :name %>
-    <%= f.text_field :name, class: "form-control", hint: "No special characters."%>
-
+    <%= f.text_field :name, class: "form-control" %>
     <%= f.label t ".email" %>
     <%= f.error :email %>
-    <%= f.email_field :email, class: "form-control" , error: "hdhdsdsloi", hint: "No special characters."%>
-
+    <%= f.email_field :email, class: "form-control" %>
     <%= f.label t ".phone" %>
     <%= f.error :phone %>
-    <%= f.email_field :phone, class: "form-control"%>
-
+    <%= f.email_field :phone, class: "form-control" %>
     <%= f.label t ".address" %>
     <%= f.error :address %>
     <%= f.email_field :address, class: "form-control" %>
-
     <%= f.label t ".password" %>
     <%= f.error :password %>
     <%= f.password_field :password, class: "form-control" %>
-
     <%= f.label :password_confirmation, t(".confirm_password") %>
     <%= f.error :password_confirmation %>
     <%= f.password_field :password_confirmation, class: "form-control" %>
-
     <%= f.submit t(".sign_up"), class: "btn btn-primary" %>
   <% end %>
 </div>

@@ -24,6 +24,16 @@ en:
     password: "Password"
     confirmation: "Confirmation Password"
     dont_have_acount: "Don't have an account?"
+    quick_view: "Quick view"
+    trousers: "Trousers"
+    shirt: "Shirt"
+    shoes: "Shoes"
+    sandal: "Sandal"
+    balo: "Balo"
+    product_not_found: "Product not found"
+    category_not_found: "Category not found"
+    enter_form: "Enter name of product ... "
+    search_result: "Result"
   admin:
     static_pages:
       settings: "Settings"
@@ -61,6 +71,9 @@ en:
     header:
       sign_up: "Sign Up"
       now: "Now"
+      account: "Account"
+      log_out: "Log out"
+      search_here: "Search here"
   users:
     create:
       users_success: "Users success"
@@ -73,5 +86,9 @@ en:
       address: "address"
       password: "Password"
       confirm_password: "Confirm Password"
+  sessions:
     new:
-      content_sign_up: "By clicking register, I agree to your terms"
+      new_user: "New user? Signup now!"
+      email: "Email"
+      password: "Password"
+      log_in: "Log in"
