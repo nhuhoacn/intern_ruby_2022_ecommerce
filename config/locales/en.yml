@@ -57,3 +57,21 @@ en:
       none: "None"
       details: "Details"
       content: "Content"
+  layouts:
+    header:
+      sign_up: "Sign Up"
+      now: "Now"
+  users:
+    create:
+      users_success: "Users success"
+      users_unsuccess: "users_unsuccess"
+    form_signup:
+      sign_up: "Sign Up"
+      name: "Name"
+      email: "Email"
+      phone: "Phone"
+      address: "address"
+      password: "Password"
+      confirm_password: "Confirm Password"
+    new:
+      content_sign_up: "By clicking register, I agree to your terms"

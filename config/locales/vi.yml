@@ -57,3 +57,21 @@ vi:
       none: "Không có"
       details: "Chi tiết"
       content: "Nội dung"
+  layouts:
+    header:
+      sign_up: "Đăng ký"
+      now: "ngay bây giờ"
+      content_sign_up: "Khi đăng ký, tôi đồng ý với các điều khoản"
+  users:
+    create:
+      users_success: "Đăng ký thành công"
+      users_unsuccess: "Đăng ký không thành công"
+    form_signup:
+      sign_up: "Đăng ký"
+      name: "Tên"
+      email: "Email"
+      phone: "Số điện thoại"
+      address: "Địa chỉ"
+      password: "Mật khẩu"
+      confirm_password: "Nhập lại mật khẩu"
+    new:

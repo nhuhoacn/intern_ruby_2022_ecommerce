@@ -6,12 +6,13 @@ Rails.application.routes.draw do
     get "/detail", to: "static_pages#detail"
     get "/mens", to: "static_pages#mens"
     get "/womens", to: "static_pages#womens"
-    resources :user
-
+    
     namespace :admin do
       resources :static_pages
       resources :categories
       root "static_pages#index"
     end
+
+    resources :users
   end
 end
