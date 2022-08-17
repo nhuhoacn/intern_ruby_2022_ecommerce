@@ -24,4 +24,8 @@ import "../stylesheets/application"
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
+
+require('admin/scripts')
+require('admin/all')
 global.toastr = require("toastr")
+require('admin/index.min')

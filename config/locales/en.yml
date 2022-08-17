@@ -24,6 +24,16 @@ en:
     password: "Password"
     confirmation: "Confirmation Password"
     dont_have_acount: "Don't have an account?"
+    quick_view: "Quick view"
+    trousers: "Trousers"
+    shirt: "Shirt"
+    shoes: "Shoes"
+    sandal: "Sandal"
+    balo: "Balo"
+    product_not_found: "Product not found"
+    category_not_found: "Category not found"
+    enter_form: "Enter name of product ... "
+    search_result: "Result"
   admin:
     static_pages:
       settings: "Settings"
