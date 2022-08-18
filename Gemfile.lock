@@ -93,6 +93,7 @@ GEM
     dry-container (0.10.1)
       concurrent-ruby (~> 1.0)
     dry-core (0.8.1)
+      concurrent-ruby (~> 1.0)
     dry-inflector (0.3.0)
     dry-initializer (3.1.1)
     dry-logic (1.2.0)
@@ -125,6 +126,7 @@ GEM
       sassc (~> 2.0)
     globalid (1.0.0)
       activesupport (>= 5.0)
+    htmlbeautifier (1.4.2)
     i18n (1.12.0)
       concurrent-ruby (~> 1.0)
     jbuilder (2.11.5)
@@ -316,10 +318,12 @@ DEPENDENCIES
   config
   faker
   font-awesome-sass (~> 6.1.2)
+  htmlbeautifier
   jbuilder (~> 2.7)
   listen (~> 3.3)
   mysql2
   pagy
+  pry
   pry-rails
   puma (~> 5.0)
   rack-mini-profiler (~> 2.0)
