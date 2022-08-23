@@ -6,7 +6,12 @@ class Order < ApplicationRecord
   has_many :products, through: :order_details
   belongs_to :user
 
+  delegate :name, to: :user
+
   scope :oldest, ->{order created_at: :asc}
 
-  delegate :name, to: :user
+  scope :this_month, (lambda do
+    where(created_at:
+      DateTime.now.beginning_of_month..DateTime.now.end_of_month)
+  end)
 end

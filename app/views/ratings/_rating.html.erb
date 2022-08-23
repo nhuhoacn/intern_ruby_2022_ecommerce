@@ -1,0 +1,11 @@
+<tbody>
+  <tr>
+    <th scope="row"><%= rating.user.name %></th>
+    <td><%= rating.comment %></td>
+    <td>
+      <% (1..rating.star).each do |i| %>
+        <i class="fa fa-star show_rating" data-star="<%= i %>"></i> 
+      <% end %>
+    </td>
+  </tr>
+</tbody>

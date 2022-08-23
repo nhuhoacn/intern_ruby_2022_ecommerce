@@ -17,3 +17,8 @@ user:
   valid_email_regex: !ruby/regexp /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 carts:
   min_quantily: 1
+product:
+  item: 15
+rate: [1,2,3,4,5]
+carts:
+  min_quantily: 1

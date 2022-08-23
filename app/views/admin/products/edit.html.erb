@@ -1,0 +1,5 @@
+<div class = "container" >
+  <%= render "form", product: @product %>
+  <%= link_to t("admin.product.show"), admin_product_path(@product) %>
+  <%= link_to t("admin.product.back"), admin_products_path %>
+</div>

@@ -95,3 +95,27 @@ label {
 .body-main-product {
   display: inline-block;
 }
+tr > th,td {
+  text-align: center;
+}
+.detail-order :hover {
+  color: red;
+  background-color: white;
+}
+
+.fa-trash :hover {
+  color: red;
+}
+
+.product_cart {
+  margin-bottom: 10px;
+}
+
+.col-lg-8 {
+  background-color: white;
+  display: inline-block;
+}
+
+.body-main-product {
+  display: inline-block;
+}
