@@ -16,20 +16,20 @@
         </li>
       </ul>
     <% else %>
-    <ul>
-      <li>
-        <a href="#" data-toggle="modal" data-target="#myModal">
-          <i class="fa fa-sign-in" aria-hidden="true"></i>
-          <%= t "static_pages.sign_in" %>
-        </a>
-      </li>
-      <li>
-        <a href="#" data-toggle="modal" data-target="#myModal2">
-          <i class="fa fa-pencil" aria-hidden="true"></i>
-          <%= t "static_pages.sign_up" %>
-        </a>
-      </li>
-    </ul>
+      <ul>
+        <li>
+          <a href="#" data-toggle="modal" data-target="#myModal">
+            <i class="fa fa-sign-in" aria-hidden="true"></i>
+            <%= t "static_pages.sign_in" %>
+          </a>
+        </li>
+        <li>
+          <a href="#" data-toggle="modal" data-target="#myModal2">
+            <i class="fa fa-pencil" aria-hidden="true"></i>
+            <%= t "static_pages.sign_up" %>
+          </a>
+        </li>
+      </ul>
     <% end %>
   </div>
 </div>
@@ -39,21 +39,20 @@
   <div class="header-bot_inner_wthreeinfo_header_mid">
     <div class="col-md-4 header-middle">
       <%= form_tag result_products_path, method: :get do %>
-          <%= search_field_tag :name, params[:name], placeholder: t("static_pages.enter_form") %>
-          <%= submit_tag "", :name => nil %>
+        <%= search_field_tag :name, params[:name], placeholder: t("static_pages.enter_form") %>
+        <%= submit_tag "", :name => nil %>
       <% end %>
       <div class="clearfix"></div>
     </div>
     <!-- header-bot -->
     <div class="col-md-4 logo_agile">
       <h1>
-        <a href="index.html"
-          ><span>E</span>lite Shoppy
-          <i
-            class="fa fa-shopping-bag top_logo_agile_bag"
+        <%= link_to root_path do %>
+          <span>E</span>lite Shoppy
+          <i class="fa fa-shopping-bag top_logo_agile_bag"
             aria-hidden="true"
-          ></i
-        ></a>
+          ></i>
+        <% end %>
       </h1>
     </div>
     <!-- header-bot -->
@@ -222,19 +221,22 @@
     </div>
     <div class="top_nav_right">
       <div class="wthreecartaits wthreecartaits2 cart cart box_1">
-        <form action="#" method="post" class="last">
-          <input type="hidden" name="cmd" value="_cart" />
-          <input type="hidden" name="display" value="1" />
-          <button class="w3view-cart" type="submit" name="submit" value="">
+        <% if logged_in? %>
+          <%= link_to cart_path(id: 2) do %>
+            <button class="w3view-cart" type="submit" name="submit" value="">
+              <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
+            </button>
+          <% end %>
+        <% else %>
+          <button class="w3view-cart" value="" data-toggle="modal" data-target="#myModal">
             <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
           </button>
-        </form>
+        <% end %>
       </div>
     </div>
     <div class="clearfix"></div>
   </div>
 </div>
-
 <!-- Modal1 -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog">
   <div class="modal-dialog">
@@ -320,7 +322,7 @@
       <div class="modal-body modal-body-sub_agile">
         <div class="col-md-8 modal_body_left modal_body_left1">
           <h3 class="agileinfo_sign"> <%= t ".sign_up" %><span><%= t ".now" %></span></h3>
-            <%= render "users/form_signup", user: User.new %>
+          <%= render "users/form_signup", user: User.new %>
           <ul
             class="social-nav model-3d-0 footer-social w3_agile_social top_agile_third">
             <li>

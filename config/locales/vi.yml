@@ -88,6 +88,9 @@ vi:
       date: "Ngày mua"
       action: "Xử lý"
   layouts:
+    application:
+      english: "Tiếng anh"
+      vietnamese: "Tiếng việt"
     header:
       sign_up: "Đăng ký"
       now: "ngay bây giờ"
@@ -95,6 +98,8 @@ vi:
       account: "Tài khoản"
       log_out: "Đăng xuất"
       search_here: "Tìm kiếm ở đây"
+    add_cart:
+      add_to_cart: "Thêm vào giỏ hàng"
   users:
     create:
       users_success: "Đăng ký thành công"
@@ -113,3 +118,35 @@ vi:
       email: "Email"
       password: "Mật khẩu"
       log_in: "Đăng nhập"
+  carts:
+    create:
+      success_add_cart: "Thêm vào giỏ hàng thành công"
+      over_than_stock: "Số lượng sản phẩm vượt quá giỏ hàng"
+    show:
+      cart_blank: "Giỏ hàng trống"
+      shopping_cart: "Giỏ hàng của tôi"
+      item: "Sản phẩm"
+      items: "Tổng số lượng : "
+      price: "Giá tiền"
+      quantity: "Số lượng"
+      subtotal: "Tổng tiền"
+      summary: "Tổng đơn hàng"
+      total_price: "Tổng số tiền"
+      please_login: "Bạn hãy đăng nhập"
+      register: "Đặt hàng"
+      no_product: "Không có sản phẩm nào trong giỏ hàng"
+    product:
+      delete: "Xóa"
+      update: "Thay đổi"
+      confirm_delete: "Bạn chắc chắn muốn xóa sản phẩm"
+    index:
+      no_product: "Không tìm thấy sản phẩm"
+    update:
+      success_update: "Đã thay đổi số lượng sản phẩm"
+      danger_quantily: "Số lượng sản phẩm vượt quá số lượng trong kho"
+    destroy:
+      success_delete: "Đã xóa sản phẩm trong giỏ hàng"
+      fail_delete: "Xóa sản phẩm không thành công"
+  orders:
+    new:
+      payment: "Đặt hàng"

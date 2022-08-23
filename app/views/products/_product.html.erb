@@ -14,34 +14,32 @@
       </h4>
       <div class="info-product-price">
         <span class="item_price">
-          <%= number_to_currency(product.price, negative_format: "(%u%n)") %>
+          <%= number_to_currency product.price, negative_format: "(%u%n)" %>
         </span>
       </div>
       <div
         class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2"
       >
-        <form action="#" method="post">
+        <%= form_with url: carts_path(id: product.id ), method: :post do |f| %>
           <fieldset>
-            <input type="hidden" name="cmd" value="_cart" />
-            <input type="hidden" name="add" value="1" />
-            <input type="hidden" name="business" value=" " />
-            <input
-              type="hidden"
-              name="item_name"
-              value="Party Men's Blazer"
+            <% if logged_in? %>
+              <%= f.hidden_field :quantily, value: 1, max: 10, min: Settings.carts.min_quantily %>
+              <input
+                type="submit"
+                name="submit"
+                value="Add to cart"
+                class="button"/>
+            <% else %>
+              <input
+                type="button"
+                value="Add to cart"
+                class="button"
+                data-toggle="modal"
+                data-target="#myModal"
             />
-            <input type="hidden" name="amount" value="30.99" />
-            <input type="hidden" name="discount_amount" value="1.00" />
-            <input type="hidden" name="currency_code" value="USD" />
-            <input type="hidden" name="return" value=" " />
-            <input type="hidden" name="cancel_return" value=" " />
-            <input
-              type="submit"
-              name="submit"
-              value="Add to cart"
-              class="button"
-            />
+            <% end %>
           </fieldset>
+          <% end %>
         </form>
       </div>
     </div>

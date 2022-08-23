@@ -88,12 +88,17 @@ en:
       date: "Date"
       action: "Action"
   layouts:
+    application:
+      english: "English"
+      vietnamese: "Vietnamese"
     header:
       sign_up: "Sign Up"
       now: "Now"
       account: "Account"
       log_out: "Log out"
       search_here: "Search here"
+    add_cart:
+      add_to_cart: "Add to cart"
   users:
     create:
       users_success: "Users success"
@@ -112,3 +117,35 @@ en:
       email: "Email"
       password: "Password"
       log_in: "Log in"
+  carts:
+    create:
+      success_add_cart: "Add to cart successfully"
+      over_than_stock: "Quantity over than stock:"
+    show:
+      cart_blank: "Cart blank"
+      shopping_cart: "Shopping Cart"
+      item: "items"
+      items: "Items : "
+      price: "Price"
+      quantity: "Quantity"
+      subtotal: "Subtotal"
+      summary: "Summary"
+      total_price: "Total price"
+      please_login: "Please login"
+      register: "Register"
+      no_product: "There are no products in the cart"
+    product:
+      delete: "Delete"
+      update: "Update"
+      confirm_delete: "Are you sure you want to delete?"
+    index:
+      no_product: "Không tìm thấy sản phẩm"
+    update:
+      success_update: "Success update"
+      danger_quantily: "Exceed the quantity in stock"
+    destroy:
+      success_delete: "Delete success"
+      fail_delete: "Delete fail"
+  orders:
+    new:
+      payment: "Payment"
