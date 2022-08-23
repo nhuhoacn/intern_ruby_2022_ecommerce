@@ -26,6 +26,7 @@ group :development, :test do
 end
 
 group :development do
+  gem "bullet"
   gem "listen", "~> 3.3"
   gem "pry-rails"
   gem "rack-mini-profiler", "~> 2.0"

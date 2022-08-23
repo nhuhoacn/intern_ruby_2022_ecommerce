@@ -12,6 +12,7 @@ Rails.application.routes.draw do
     namespace :admin do
       resources :static_pages
       resources :categories
+      resources :orders
       root "static_pages#index"
     end
     resources :categories, only: :show

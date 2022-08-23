@@ -1,8 +1,8 @@
 class Product < ApplicationRecord
-  belongs_to :category
-  has_many :images, dependent: :destroy
+  belongs_to :category, optional: true
   has_many :ratings, dependent: :destroy
   has_many :order_details, dependent: :destroy
+  has_many :orders, through: :order_details
 
   validates :name, :price, :quantity_in_stock, presence: true
 

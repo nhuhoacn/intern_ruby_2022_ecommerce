@@ -17,8 +17,8 @@
   </div>
 
   <div class="field">
-    <%= form.label :parent_id %>
-    <%= form.text_field :parent_id %>
+    <%= form.label :category_id %>
+    <%= form.select(:category_id, options_for_select(options_for_category(@categories, @category))) %>
   </div>
 
   <div class="actions">

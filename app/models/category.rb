@@ -1,6 +1,10 @@
 class Category < ApplicationRecord
   has_many :products, dependent: :nullify
 
+  has_many :categories, dependent: :nullify
+
+  belongs_to :category, optional: true
+
   validates :name, presence: true
 
   before_save :create_path
@@ -8,9 +12,9 @@ class Category < ApplicationRecord
   scope :newest, ->{order created_at: :desc}
 
   def create_path
-    return if parent_id.blank?
+    return if category_id.blank?
 
-    next_category = Category.find_by id: parent_id
-    self.parent_path = [next_category.parent_path, parent_id].join("/")
+    next_category = Category.find_by id: category_id
+    self.parent_path = [next_category.parent_path, category_id].join("/")
   end
 end
