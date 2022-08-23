@@ -15,8 +15,8 @@
     <% end %>
     <%= render "layouts/header" %>
     <div class="translate">
-      <%= link_to "English", locale: :en %>
-      <%= link_to "Vietnamese", locale: :vi %>
+      <%= link_to t(".english"), locale: :en %>
+      <%= link_to t("vietnamese"), locale: :vi %>
     </div>
     <%= yield %>
     <%= render "layouts/footer" %>

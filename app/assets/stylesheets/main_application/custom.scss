@@ -4,7 +4,11 @@ body {
   margin: 33px;
 }
 
-body, p, ol, ul, td {
+body,
+p,
+ol,
+ul,
+td {
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
   line-height: 18px;
@@ -77,4 +81,17 @@ div.actions {
 
 label {
   display: block;
+}
+
+.product_cart {
+  margin-bottom: 10px;
+}
+
+.col-lg-8 {
+  background-color: white;
+  display: inline-block;
+}
+
+.body-main-product {
+  display: inline-block;
 }
