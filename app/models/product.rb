@@ -3,6 +3,9 @@ class Product < ApplicationRecord
   has_many :ratings, dependent: :destroy
   has_many :order_details, dependent: :destroy
   has_many :orders, through: :order_details
+  has_many :product_images, dependent: :destroy, inverse_of: :product
+
+  accepts_nested_attributes_for :product_images, allow_destroy: true
 
   validates :name, :price, :quantity_in_stock, presence: true
 
@@ -13,4 +16,5 @@ class Product < ApplicationRecord
   scope :order_by_created_at, ->(param){order(created_at: param)}
   scope :newest, ->{order created_at: :desc}
   scope :by_ids, ->(ids){where id: ids}
+  scope :uncategorized, ->{where category_id: nil}
 end

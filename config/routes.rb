@@ -10,11 +10,14 @@ Rails.application.routes.draw do
     resources :users
 
     namespace :admin do
+      get "search", to: "products#index"
       resources :static_pages
       resources :categories
       resources :orders
+      resources :products
       root "static_pages#index"
     end
+
     resources :categories, only: :show
     resources :products do
       collection do

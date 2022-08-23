@@ -1,46 +1,3 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
-10.times do |n|
-  Category.create!(
-    name: Faker::Lorem.sentence(word_count: 2)
-  )
-end
-
-20.times do |n|
-  Product.create!(
-    name: Faker::Name.name_with_middle,
-    price: Faker::Number.number(digits: 3),
-    description: Faker::Lorem.sentence(word_count: 5),
-    quantity_in_stock: 10,
-    category_id: 1
-  )
-end
-
-# 10.times do |n|
-#   Image.create!(
-#     image: "/assets/",
-#     product_id: Faker::Number.between(from: 8, to: 18),
-#   )
-# end
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
-# ĐỀ PHÒNG AE NÀO VẪN GIỮ BẢNG IMAGES CŨ NHÉ
-# 10.times do |n|
-#   Image.create!(
-#     image: "/assets/",
-#     product_id: Faker::Number.between(from: 8, to: 18),
-#   )
-# end
 require 'faker'
 
 5.times do |n|
@@ -71,6 +28,8 @@ categories.each do |category|
   5.times do
     name = Faker::Nation.language
     product = category.products.create!(name: name, price: 50, quantity_in_stock: quantity_in_stock)
+    product_image = product.product_images.create!
+    product_image.image.attach(io: File.open("app/assets/images/ProductImage/product#{rand(1..5)}.jpg"), filename: "product#{rand(1..35)}.jpg")
   end
 end
 

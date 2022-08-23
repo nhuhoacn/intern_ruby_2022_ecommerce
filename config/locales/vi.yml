@@ -87,6 +87,25 @@ vi:
       customer: "Khách hàng"
       date: "Ngày mua"
       action: "Xử lý"
+    product:
+      products: "Danh sách sản phẩm"
+      category: "Danh mục"
+      ID: "ID"
+      price: "Giá: "
+      description: "Mô tả: "
+      images: "Ảnh"
+      you_sure: "Are you sure?"
+      new: "Thêm sản phẩm mới"
+      edit: "Chỉnh sửa"
+      back: "Quay lại"
+      show: "Xem"
+      new_product: "Thêm sản phẩm"
+      add_image: "Thêm ảnh"
+      remove_image: "Xóa ảnh"
+      filter:
+        select: "Chọn filter"
+        newest: "Mới nhất"
+        uncate: "Không được phân loại"
   layouts:
     application:
       english: "Tiếng anh"
