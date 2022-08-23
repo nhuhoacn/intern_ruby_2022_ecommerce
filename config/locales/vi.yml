@@ -34,6 +34,9 @@ vi:
     category_not_found: "Không tìm thấy danh mục"
     enter_form: "Nhập từ cần tìm ..."
     search_result: "Kết quả tìm kiếm từ : "
+    check_payment: "Kiểm tra giao hàng và tùy chọn thanh toán"
+    qty: "Số lượng"
+    add_to_cart: "Thêm vào giỏ hàng"
   admin:
     static_pages:
       settings: "Cài đặt"
