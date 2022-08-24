@@ -1,0 +1,8 @@
+<tr>
+  <th scope="row" class="product-image">
+    <%= image_tag product.product_images.first&.image if product.product_images.first&.image %>
+  </th>
+  <td><%= product.name %></td>
+  <td><%= number_to_currency product.price, negative_format: "(%u%n)" %></td>
+  <td><%= current_cart["#{product.id}"] %></td>
+</tr>

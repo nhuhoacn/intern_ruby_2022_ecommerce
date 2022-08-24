@@ -5980,7 +5980,6 @@ aside {
 }
 
 .container-checkout {
-  background-color: #f2f2f2;
   padding: 5px 20px 15px 20px;
   border: 1px solid lightgrey;
   border-radius: 3px;
@@ -5988,6 +5987,7 @@ aside {
 
 .row-checkout{
   padding: 50px 0;
+	margin: 0 15rem;
 }
 
 hr {

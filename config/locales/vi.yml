@@ -37,6 +37,19 @@ vi:
     check_payment: "Kiểm tra giao hàng và tùy chọn thanh toán"
     qty: "Số lượng"
     add_to_cart: "Thêm vào giỏ hàng"
+    review: "Đánh giá"
+    comment: "Bình luận"
+    submit: "Gửi"
+    rating_success: "Đánh giá thành công"
+    rating_fail: "Đánh giá thất bại"
+    pending: "Đang xử lý"
+    shipping: "Đang giao"
+    delivered: "Đã giao hàng"
+    rejected: "Từ chối"
+    canceled: "Đã hủy"
+    name: "Tên"
+    comment: "Bình luận"
+    rating: "Đánh giá"
   admin:
     static_pages:
       settings: "Cài đặt"
@@ -187,3 +200,12 @@ vi:
   orders:
     new:
       payment: "Đặt hàng"
+      total: "Tổng tiền"
+      image: "hình ảnh"
+      name: "tên sản phẩm"
+      price: "giá tiền"
+      quantity: "số lượng"
+    create:
+      order_fail: "Tạo đơn hàng thất bại"
+      success_checkout: "Tạo đơn hàng thành công"
+      danger_checkout: "Tạo đơn hàng thất bại"

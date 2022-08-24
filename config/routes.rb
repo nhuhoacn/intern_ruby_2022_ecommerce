@@ -18,7 +18,7 @@ Rails.application.routes.draw do
       resources :users
       root "static_pages#index"
     end
-
+    resources :ratings
     resources :categories, only: :show
     resources :products do
       collection do
@@ -26,5 +26,10 @@ Rails.application.routes.draw do
       end
     end
     resources :carts
+    resources :orders do
+      member do
+        get :change
+      end
+    end
   end
 end

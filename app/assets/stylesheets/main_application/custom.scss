@@ -95,3 +95,81 @@ label {
 .body-main-product {
   display: inline-block;
 }
+tr > th,td {
+  text-align: center;
+}
+.detail-order :hover {
+  color: red;
+  background-color: white;
+}
+
+.fa-trash :hover {
+  color: red;
+}
+
+.product_cart {
+  margin-bottom: 10px;
+}
+
+.col-lg-8-1 {
+  background-color: white;
+  display: inline-flex;
+  margin-left: 5rem;
+}
+
+.body-main-product {
+  display: inline-block;
+}
+
+tr > th,td {
+  text-align: center;
+}
+.detail-order :hover {
+  color: red;
+  background-color: white;
+}
+
+.fa-trash :hover {
+  color: red;
+}
+
+.product_cart {
+  margin-bottom: 10px;
+}
+
+.body-main-product {
+  display: inline-block;
+}
+
+order-price {
+  float: bottom;
+  margin-left: 17rem;
+}
+
+#submit-order{
+  float: right;
+  margin: 1.5rem 0;
+}
+
+.total{
+  margin: 2rem 0;
+  font-size: 2rem;
+  display: flex;
+}
+
+.table-cart{
+  td{
+    padding: 0 1.5rem 7px;
+  }
+  th{
+    padding: 0 1.5rem 7px;
+  }
+}
+
+.button-container {
+  margin-left: auto;
+  margin-top: -0.5rem;
+}
+.order-price{
+  margin-left: 20rem;
+}

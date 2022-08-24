@@ -2,8 +2,11 @@ class Order < ApplicationRecord
   enum status: {Pending: 0, Shipping: 1, Delivered: 2, Canceled: 3,
                 Rejected: 4}
 
+  ORDER_ATTRS = %w(quantity price product_id amount).freeze
+
   has_many :order_details, dependent: :destroy
   has_many :products, through: :order_details
+
   belongs_to :user
 
   delegate :name, to: :user
