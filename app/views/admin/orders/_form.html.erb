@@ -43,6 +43,7 @@
     <div style = "submit_padding"><%= form.submit %></div>
   </div>
 
-  <%= link_to t("admin.category.back"), admin_orders_path %>
+  <%= link_to t("admin.category.back_index"), admin_orders_path %>
+  <%= link_to t("admin.category.back_user"), admin_user_path(@order.user) %>
   <% end %>
 </div>
