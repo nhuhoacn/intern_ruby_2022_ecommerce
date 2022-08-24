@@ -13,7 +13,7 @@ end
 
 men = Category.create!(name: "Men")
 woman = Category.create!(name: "Woman")
-3.times do
+6.times do
   name = Faker::Emotion.noun
   cate1 = men.categories.new(name: name)
   cate1.save!

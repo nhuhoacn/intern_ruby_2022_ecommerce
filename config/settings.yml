@@ -19,3 +19,6 @@ carts:
   min_quantily: 1
 product:
   item: 15
+rate: [1,2,3,4,5]
+carts:
+  min_quantily: 1

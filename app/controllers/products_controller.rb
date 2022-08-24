@@ -6,6 +6,8 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.find_by(id: params[:id])
+    @ratings = Rating.where(product_id: params[:id]).newest
+    @pagy, @ratings = pagy @ratings if @ratings.present?
     return if @product.present?
 
     flash[:danger] = t "static_pages.product_not_found"
