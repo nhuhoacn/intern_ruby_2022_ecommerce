@@ -1,4 +1,5 @@
 en:
+  submit: "Submit"
   flashes:
     alert_not_found: "Sorry, can't find what you look for"
     delete_success: "Successfully deleted"
@@ -93,7 +94,8 @@ en:
       quantity: "Quantity"
       price: "Price"
       name: "Product list"
-      id: "ID"
+      ID: "ID"
+      id_field: "ID: "
       details: "Order's details: "
       total: "Total: "
       current_status: "Current status: "
@@ -101,7 +103,15 @@ en:
       customer: "Customer"
       date: "Date"
       action: "Action"
+      pending: "Pending"
+      shipping: "Shipping"
+      delivered: "Delivered"
+      canceled: "Canceled"
+      rejected: "Rejected"
     product:
+      name: "Name: "
+      quantity: "Quantity in stock: "
+      image: "Image "
       products: "Products"
       category: "Category"
       ID: "ID"
@@ -133,8 +143,8 @@ en:
       rating: "Ratings"
       comment: "Comment"
       star: "Rate"
-      product: "Sản phẩm"
-      back: "Quay lại"
+      product: "Product"
+      back: "Back"
       customer_month: "This month's best customer"
       sum_order: "Total number of orders: "
   layouts:
@@ -186,6 +196,7 @@ en:
       summary: "Summary"
       total_price: "Total price"
       please_login: "Please login"
+      please_login_admin: "You need to be admin"
       register: "Register"
       no_product: "There are no products in the cart"
     product:

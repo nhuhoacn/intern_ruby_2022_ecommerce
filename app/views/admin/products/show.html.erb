@@ -1,60 +1,52 @@
-<div class="container">
-  <div class="row">
-    <div class="column">
-      <div class="form-outline mb-4">
+<div style="padding: 15px 0px">
+  <div class="container">
+    <div class="card mb-3">
+      <div class="card-header" style="background: none">
         <h2>
-          <%= t "admin.product.ID" %>
-            <%= @product.id %>
+          <%= @product.name %>
         </h2>
       </div>
-
-      <div class="form-outline mb-4">
-        <strong>
-          <%= t "admin.category.name" %>
-        </strong>
-        <%= @product.name %>
-      </div>
-
-      <div class="form-outline mb-4">
-        <strong>
-          <%= t "admin.product.price" %>
-        </strong>
-        <%= @product.price %>
-      </div>
-
-      <div class="form-outline mb-4">
-        <strong>
-          <%= t "admin.category.parent" %>
-        </strong>
-        <%= category_name(@product.category_id) %>
-      </div>
-
-      <div class="form-outline mb-4">
-        <strong>
-          <%= t "admin.product.description" %>
-        </strong>
-        <%= @product.description %>
-      </div>
-
-      <div class="form-outline mb-4">
-        <%= link_to t("admin.product.edit"), edit_admin_product_path(@product) %>
-        <%= link_to t("admin.product.back"), admin_products_path %>
-      </div>
-    </div>
-
-    <div class="column">
-      <div class="form-outline mb-4">
-        <strong>
-          <%= t "admin.product.images" %>
-        </strong>
-        <% if @product.product_images.any? %>
-          <% @product.product_images.includes(image_attachment: :blob).each do |proimg| %>
-            <div>
-              <%= image_tag(proimg.thumbnail(proimg.image)) if proimg.image.present? %>
+      <div class="card-body">
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="card text-white bg-info mb-3">
+              <div class="card-body ">
+                <h5 class="card-title">
+                  <%= t("admin.product.id_field") + @product.id.to_s %>
+                </h5>
+                <strong>
+                  <p class="card-text">
+                    <%= t("admin.product.name") + @product.name %>
+                  </p>
+                  <p class="card-text">
+                    <%= t("admin.product.price") + @product.price.to_s %>
+                  </p>
+                  <p class="card-text">
+                    <%= t("admin.product.category") + ": " + @product.category_name %>
+                  </p>
+                  <p class="card-text">
+                    <%= t("admin.product.quantity") + @product.quantity_in_stock.to_s %>
+                  </p>
+                  <p class="card-text">
+                    <% if @product.description.present? %>
+                      <%= t("admin.product.description") + @product.description %>
+                    <% end %>
+                  </p>
+                </strong>
+              </div>
             </div>
-          <% end %>
-        <% end%>
+          </div>
+          <div class="col-sm-6">
+            <div class="card mb-3" style="text-align: center">
+              <div class="card-body">
+                <%= render "images", product: @product %>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
+    <%= link_to t("admin.product.edit"), edit_admin_product_path(@product), class: "btn btn-primary"%>
+    <%= link_to t("admin.product.back"), admin_products_path, class: "btn btn-primary" %>
   </div>
 </div>

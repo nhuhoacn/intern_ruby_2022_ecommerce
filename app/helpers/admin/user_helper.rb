@@ -4,9 +4,14 @@ module Admin::UserHelper
     @rating.present? ? @rating.comment : t("admin.category.none")
   end
 
+  def count_delivered orders
+    @orders = orders.Delivered.size
+    "Delivered: #{@orders}"
+  end
+
   def count_pending orders
     @orders = orders.Pending.size
-    "Pending: #{@orders}"
+    "Delivered: #{@orders}"
   end
 
   def count_shipping orders

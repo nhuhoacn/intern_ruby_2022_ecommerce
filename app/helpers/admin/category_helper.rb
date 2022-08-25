@@ -4,15 +4,10 @@ module Admin::CategoryHelper
     parent.nil? ? t("admin.category.none") : parent.name
   end
 
-  def options_for_category categories, category
-    options = [["None", nil]]
-    categories.each do |cate|
-      if cate != category
-        input = [cate.name, cate.id.to_s]
-        options.append input
-      end
-    end
-    options
+  def options_for_category category
+    options = Category.pluck :name, :id
+    options.delete [category.name.to_s, category.id]
+    options.unshift ["None", nil]
   end
 
   def parent_category categories

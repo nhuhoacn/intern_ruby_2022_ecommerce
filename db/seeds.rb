@@ -30,6 +30,7 @@ end
 categories = Category.all
 categories.each do |category|
   5.times do
+    sleep(0.5)
     name = Faker::Nation.language
     des = Faker::Lorem.sentence(word_count: 5)
     product = category.products.create!(name: name, price: 50, quantity_in_stock: 5, description: des)
@@ -40,9 +41,10 @@ end
 
 
 users = User.all
-5.times do
+rand(1..5).times do
   status = rand(0..4)
   users.each { |user| user.orders.create!(status: status)}
+  sleep(0.5)
 end
 
 users.each do |user|
@@ -59,6 +61,7 @@ first.orders.create!(status: 2)
 
 orders = Order.all
 orders.each do |order|
+  amount = 0
   rand(1..5).times do
     product_id = rand(1..40)
     quantity = rand(1..3)

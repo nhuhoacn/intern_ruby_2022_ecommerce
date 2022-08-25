@@ -8,8 +8,8 @@
           </div>
         </div>
       </div>
-      <%= render "order", orders: @orders %>
-      <%= render "rating", ratings: @ratings %>
+      <div class = "seperate-table" ><%= render "order", orders: @orders %></div>
+      <div class = "seperate-table" ><%= render "rating", ratings: @ratings %></div>
       <%= link_to t("admin.user.back"), admin_users_path, class: "btn btn-outline-primary"%>
     </div>
   </div>

@@ -8,10 +8,38 @@ class Order < ApplicationRecord
 
   delegate :name, to: :user
 
+  before_save :update_branch
+
   scope :oldest, ->{order created_at: :asc}
+
+  scope :most_order, (lambda do
+    Order.Delivered.this_month.group(:user_id)
+                    .order("count_all DESC").limit(1).count.first.first
+  end)
 
   scope :this_month, (lambda do
     where(created_at:
       DateTime.now.beginning_of_month..DateTime.now.end_of_month)
   end)
+
+  private
+
+  def update_branch
+    case status
+    when "Shipping", "Delivered"
+      order_details = self.order_details
+      order_details.each do |order_detail|
+        product = order_detail.product
+        product.quantity_in_stock -= order_detail.quantity
+        product.update!(quantity_in_stock: product.quantity_in_stock)
+      end
+    when "Rejected", "Canceled"
+      order_details = self.order_details
+      order_details.each do |order_detail|
+        product = order_detail.product
+        product.quantity_in_stock += order_detail.quantity
+        product.update!(quantity_in_stock: product.quantity_in_stock)
+      end
+    end
+  end
 end

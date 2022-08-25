@@ -1,6 +1,6 @@
 class Admin::CategoriesController < Admin::BaseController
   before_action :find_category, only: %i(edit show update destroy)
-  before_action :load_categories, only: %i(edit new)
+  before_action :load_categories, only: %i(new)
 
   def index
     @pagy, @categories = pagy(Category.newest,

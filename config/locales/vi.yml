@@ -1,4 +1,5 @@
 vi:
+  submit: "Submit"
   flashes:
     alert_not_found: "Xin lỗi không tìm thấy"
     delete_success: "Xóa thành công"
@@ -101,10 +102,19 @@ vi:
       customer: "Khách hàng"
       date: "Ngày mua"
       action: "Xử lý"
+      pending: "Chờ xử lý"
+      shipping: "Đang ship"
+      delivered: "Đã giao hàng"
+      canceled: "Đã hủy"
+      rejected: "Bị từ chối"
     product:
+      name: "Tên: "
+      quantity: "Số lượng trong kho: "
+      image: "Ảnh "
       products: "Danh sách sản phẩm"
       category: "Danh mục"
       ID: "ID"
+      id_field: "ID: "
       price: "Giá: "
       description: "Mô tả: "
       images: "Ảnh"
@@ -183,6 +193,7 @@ vi:
       summary: "Tổng đơn hàng"
       total_price: "Tổng số tiền"
       please_login: "Bạn hãy đăng nhập"
+      please_login_admin: "Bạn cần là admin"
       register: "Đặt hàng"
       no_product: "Không có sản phẩm nào trong giỏ hàng"
     product:
