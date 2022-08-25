@@ -1,0 +1,46 @@
+<div class="container_cart">
+  <div class="row-checkout row row-cart">
+    <div class = "card">
+      <div class="col-60">
+        <div class="container-checkout">
+          <div class="row">
+            <div class="card-header">
+              <h3 class="fw-bold mb-0 text-black"><%= t ".payment" %></h3>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="information">
+      </div>
+      <div class = "card-body">
+        <div class="col-40">
+          <div class="container-checkout">
+            <table class="table-cart">
+              <thead class="thead-dark">
+                <tr>
+                  <th scope="col"><%= t ".image"%></th>
+                  <th scope="col"><%= t ".name"%></th>
+                  <th scope="col"><%= t ".price"%></th>
+                  <th scope="col"><%= t ".quantity"%></th>
+                </tr>
+              </thead>
+              <tbody>
+                <%= render partial: "product", collection: @products %>
+              </tbody>
+            </table>
+            <%= form_for @order do |f| %>
+              <%= f.hidden_field :amount, value: total_cart, class: "form-control" %>
+              <div class="total">
+                <span><%= t ".total" %></span>
+                <span class="order-price"> <%= number_to_currency total_cart, negative_format: "(%u%n)" %> </span>
+                <div class="button-container">
+                  <button class="order btn btn-success" type="">Submit</button>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

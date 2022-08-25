@@ -214,3 +214,12 @@ en:
   orders:
     new:
       payment: "Payment"
+      total: "Total"
+      image: "image"
+      name: "name"
+      price: "price"
+      quantity: "quantity"
+    create:
+      order_fail: "Order fail"
+      success_checkout: "success checkout"
+      danger_checkout: "danger checkout"

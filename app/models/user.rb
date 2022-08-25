@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  enum role: {Admin: 0, User: 1}
   has_many :ratings, dependent: :destroy
   has_many :orders, dependent: :destroy
   has_many :messages, dependent: :destroy
