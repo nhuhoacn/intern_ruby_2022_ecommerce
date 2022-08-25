@@ -87,3 +87,6 @@ config/environments/*.local.yml
 /storage/*
 /config/application.yml
 /public/assets/*
+
+# Ignore application configuration
+/config/application.yml

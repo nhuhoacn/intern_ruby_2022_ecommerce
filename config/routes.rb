@@ -7,7 +7,9 @@ Rails.application.routes.draw do
     get "/login", to: "sessions#new"
     post "/login", to: "sessions#create"
     delete "/logout", to: "sessions#destroy"
-    resources :users
+    resources :users, except: :destroy
+    resources :account_activations, only: %i(edit create)
+    resources :password_resets, except: %i(destroy index show)
 
     namespace :admin do
       get "search", to: "products#index"

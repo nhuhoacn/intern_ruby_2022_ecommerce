@@ -5,14 +5,9 @@ class SessionsController < ApplicationController
 
   def create
     if @user&.authenticate params[:session][:password]
-      log_in @user
-      if @user.admin?
-        redirect_to admin_static_pages_path
-      else
-        redirect_to root_path
-      end
+      check_activated_user
     else
-      flash.now[:danger] = t ".invalid_email_password"
+      flash.now[:danger] = t ".user_not_found"
       respond_to do |format|
         format.html{redirect_to @user}
         format.js
@@ -33,5 +28,20 @@ class SessionsController < ApplicationController
 
     flash[:danger] = t ".user_not_found"
     redirect_to signup_path
+  end
+
+  def check_activated_user
+    if @user.activated?
+      log_in @user
+      remember @user
+      if @user.admin?
+        redirect_to admin_static_pages_path
+      else
+        redirect_to root_path
+      end
+    else
+      flash[:warning] = t ".account_not_activated"
+      redirect_to root_path
+    end
   end
 end

@@ -164,6 +164,7 @@ vi:
     create:
       users_success: "Đăng ký thành công"
       users_unsuccess: "Đăng ký không thành công"
+      mail_notice: "Hãy kiểm tra mail để  hoàn tất đăng ký"
     form_signup:
       sign_up: "Đăng ký"
       name: "Tên"
@@ -178,6 +179,9 @@ vi:
       email: "Email"
       password: "Mật khẩu"
       log_in: "Đăng nhập"
+      forgot_password: "Quên mật khẩu"
+    create:
+      account_not_activated: "Tài khoản chưa được kích hoạt. Hãy kiểm tra email của bạn để biết liên kết kích hoạt"
   carts:
     create:
       success_add_cart: "Thêm vào giỏ hàng thành công"
@@ -220,3 +224,42 @@ vi:
       order_fail: "Tạo đơn hàng thất bại"
       success_checkout: "Tạo đơn hàng thành công"
       danger_checkout: "Tạo đơn hàng thất bại"
+  account_activations:
+    edit:
+      user_success: "Tài khoản đã được kích hoạt"
+      user_unsuccess: "Kích họat không hợp lệ"
+  user_mailer:
+    account_activation:
+      account_activation: "Kích hoạt tài khoản"
+      welcome_to: "Chào mừng bạn đến với Sample App, click vào link bên dưới để kích hoạt tài khoản"
+      activate: "Kích hoạt"
+      hi: "Chào"
+    password_reset:
+      password_reset: "Đặt lại mật khẩu"
+      click: "Để đặt lại mật khẩu, hãy nhấn vào link bên dưới"
+      link: "Đặt lại mật khẩu"
+      pass_reset_content: "Liên kết này sẽ hết hạn trong hai giờ.
+        Nếu bạn không yêu cầu mật khẩu của mình được đặt lại,
+        vui lòng bỏ qua email này và mật khẩu của bạn sẽ không bị thay đổi"
+  password_resets:
+    create:
+      not_found: "Không tìm thấy tài khoản"
+      send_email: "Kiểm tra email để đặt lại mật khẩu"
+      email_not_found: "Không tìm thấy email"
+    update:
+      empty: "Mật khẩu không được để trống"
+      reset_pass: "Mật khẩu đã được đặt lại."
+      not_reset_pass: "Không thể đặt lại mật khẩu"
+      exprired: ""
+    edit:
+      not_found: "Không tìm thấy tài khoản"
+      edit_pass_title: "Đặt lại mật khẩu"
+      password: "Mật khẩu"
+      password_confirmation: "Nhập lại mật khẩu"
+      submit: "Cập nhật lại mật khẩu"
+      expired: "Hết thời gian đặt lại mật khẩu"
+      alert_user: "Tài khoản chưa được kích hoạt hoặc đã hết thời gian đặt lại mật khẩu"
+    new:
+      new_pass_title: "Quên mật khẩu"
+      email: "Nhập email"
+      submit: "Tạo mật khẩu mới"

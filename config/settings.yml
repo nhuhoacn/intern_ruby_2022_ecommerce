@@ -22,3 +22,5 @@ product:
 rate: [1,2,3,4,5]
 carts:
   min_quantily: 1
+password_reset:
+  expired: 2

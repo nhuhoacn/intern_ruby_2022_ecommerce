@@ -8,6 +8,7 @@ gem "bootsnap", ">= 1.4.4", require: false
 gem "cocoon"
 gem "config"
 gem "faker"
+gem "figaro"
 gem "font-awesome-sass", "~> 6.1.2"
 gem "htmlbeautifier"
 gem "image_processing", "~> 1.2"

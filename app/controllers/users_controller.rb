@@ -3,14 +3,18 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
+  def show; end
+
+  def edit; end
+
   def create
     @user = User.new user_params
     if @user.save
-      log_in @user
-      flash[:success] = t ".users_success"
+      @user.send_mail_activate
+      flash[:info] = t ".mail_notice"
       redirect_to root_path
     else
-      flash[:danger] = t ".users_unsuccess"
+      flash.now[:danger] = t ".users_unsuccess"
       respond_to do |format|
         format.html{redirect_to @user}
         format.js
