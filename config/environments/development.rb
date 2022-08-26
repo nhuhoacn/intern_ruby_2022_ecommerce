@@ -82,5 +82,16 @@ Rails.application.configure do
     Bullet.rails_logger = true
     Bullet.add_footer = true
   end
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.default_url_options = { host: "localhost", port: 3000 }
+  config.action_mailer.smtp_settings = {
+    user_name: ENV["MAIL_USER_NAME"],
+    password: ENV["MAIL_USER_PASSWORD"],
+    address: ENV["MAIL_ADDRESS"],
+    port: ENV["MAIL_PORT"],
+    authentication: :cram_md5,
+    enable_starttls_auto: true
+  }
+
 
 end
