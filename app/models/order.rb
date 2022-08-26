@@ -1,4 +1,5 @@
 class Order < ApplicationRecord
+  acts_as_paranoid
   enum status: {Pending: 0, Shipping: 1, Delivered: 2, Canceled: 3,
                 Rejected: 4}
 
@@ -14,6 +15,7 @@ class Order < ApplicationRecord
   before_save :update_branch
 
   scope :oldest, ->{order created_at: :asc}
+  scope :by_user, ->(uid){where user_id: uid}
 
   scope :most_order, (lambda do
     Order.Delivered.this_month.group(:user_id)
